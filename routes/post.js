@@ -9,6 +9,7 @@ const {
 } = require("../controllers/postController");
 
 router.get("/", getAllPosts);
+// GET /api/posts/post/:id
 router.get("/post/:id", getPostById);
 router.post("/post", createPost);
 router.put("/post/:id", updatePost);
