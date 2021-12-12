@@ -5,6 +5,7 @@ const getAllCommentsFromPost = async (req, res) => {
   const { id } = req.params; // this is the post id
   const comments = await Comment.find({post: id}) // return all comments from that post
     .populate("post", "title")
+    .populate("user");
   try {
     return res.status(200).json(comments);
   } catch (error) {
